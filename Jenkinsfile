@@ -17,6 +17,15 @@ pipeline {
                 }
             }
         }
+        stage('Create a dir') {
+            steps {
+                script {
+                    sh '''
+                    mkdir thomas
+                    '''
+                }
+            }
+        }
     }
 }
 
