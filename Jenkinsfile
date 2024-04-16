@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Create a directory') {
             steps {
-                sh 'mkdir arsene'
+                sh 'mkdir arsene' || true
             }
         }
 
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    touch arsene/text.txt
+                    touch arsene/text.txt || true
                     '''
                 }
             }
