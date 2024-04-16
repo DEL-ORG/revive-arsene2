@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Create a directory') {
             steps {
-                sh 'mkdir arsene' || true
+                sh 'mkdir arsene || true'
             }
         }
 
@@ -17,15 +17,18 @@ pipeline {
                 }
             }
         }
-        stage('Create a dir') {
+
+        stage('Create another directory') {
             steps {
                 script {
                     sh '''
-                    mkdir thomas
+                    mkdir thomas || true
                     '''
                 }
             }
         }
     }
+}
+
 }
 
