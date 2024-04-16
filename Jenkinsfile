@@ -2,26 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('create a dir') {
+        stage('Create a directory') {
             steps {
-                sh '''
-                mkdir arsene
-                rm -rf arsene
-                '''
+                sh 'mkdir arsene'
             }
         }
 
-
-        
-        stage('create a file') {
+        stage('Create a file') {
             steps {
-                sh '''
-                touch text.txt
-                rm -rf text.txt
-                '''
-                
+                script {
+                    sh '''
+                    touch arsene/text.txt
+                    '''
+                }
             }
         }
-
-        
     }
+}
+
